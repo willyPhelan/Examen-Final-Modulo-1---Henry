@@ -21,8 +21,13 @@
 
 function mayorMenorOIgual(numFijo) {
   // Tu código aca:
-
-}
+  return function (a) { 
+    var newarray = [] ; 
+    if (numFijo + a < 10) { return 'la suma es menor a 10' } ; 
+    if (numFijo + a > 10) { return 'la suma es mayor a 10'}
+    if (numFijo + a === 10 ) { return 10 } ; 
+    if (numFijo === null || numFijo === undefined) return newarray ; }
+  }
 
 // No modifiques nada debajo de esta linea //
 
