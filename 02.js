@@ -16,8 +16,21 @@ Pista: Podes usar el metodo search() ya incorporado dentro del prototype de Link
   */
  
 LinkedList.prototype.simplifyList = function () { 
-  // Tu código aca:
-}
+if (!this.head) return false ; 
+let NewList = new LinkedList () ; 
+let nodes = [] ; 
+let current = this.head ;
+while(current) {
+  nodes.push(current.value) ;
+  current = current.next ;  }
+  let NewArray = [...new Set(nodes)] ;
+  while(NewArray.length > 0 ) {
+    NewList.add(NewArray.shift());}
+    this.head = NewList.head ; 
+  }
+
+
+
 // No modifiques nada debajo de esta linea //
 module.exports = {
   LinkedList

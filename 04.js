@@ -21,8 +21,23 @@ const { Stack } = require("./DS");
 //   ✔️crearStack("RET****ORNA**R*FA*L**SO") => "Stack vacío"
 
 function crearStack(palabra) {
+    let a = new Stack () ; 
+    let count = 0 ; 
+    let count2 = 0 ; 
+    if ( palabra === '') return false ; 
+    for (let i = 0 ; i < palabra.length ; i++) {
+        if (palabra[i] === '*') {
+            a.pop()
+            count = count - 1 ; }
+    if (count + count2 < 0) return 'Stack vacío' ; 
+    if (palabra[i] !== '*') {
+        a.push(palabra[i])
+        count2 = count2 +1
+        }
+        }
+    return a ;     }
 
-}
+    
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
 module.exports = { crearStack };

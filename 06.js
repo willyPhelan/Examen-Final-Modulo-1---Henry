@@ -23,11 +23,18 @@ const { BinarySearchTree } = require("./DS");
 //       5                44
 //
 //  Debería retornarnos 44 y 31.
-
-BinarySearchTree.prototype.searchMaxTwo = function () {
+let array = [] // declaro array fuera de funcion porque sino la recursividad crearia todo el tiempo arrays
+BinarySearchTree.prototype.searchMaxTwo = function () { 
   // tu código acá:
+  
+  if(this.right){  // si hay right...
+    array.push(this.right.value)
+    this.right.searchMaxTwo() // vuelvo a hacer lo mismo 
+    }
+    return [].concat(array[array.length-1],array[array.length-2]) // concateno los dos ultimos valores Osea los mayores
+  };
 
-};
+
 
 // No modifiques nada debajo de esta linea //
 

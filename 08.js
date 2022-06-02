@@ -20,8 +20,29 @@
     
 function countDeep(arr) {
   // Tu código aca:
-
-} 
-// No modifiques nada debajo de esta linea //
+  let contreras=arr
+  let numeros=0;
+  let string=0;
+  let boolean=0;
+  let undef=0;
+  let arreglos=1;
+  function martin(contreras){
+  for(let i = 0; i < contreras.length; i++){
+    if(typeof contreras[i]==="string") string++
+    if(typeof contreras[i]==="number") numeros++
+    if(typeof contreras[i] === "boolean") boolean++
+    if(typeof contreras[i] === "undefined") undef++
+    if(Array.isArray(contreras[i])){
+    martin(contreras[i])
+      arreglos++;
+    }
+  }
+  function valueProducto() {
+    return ((((arreglos-numeros)*string)/boolean)**undef)
+  }
+  return valueProducto()
+  }
+  return martin(contreras)
+  }
 
 module.exports = countDeep

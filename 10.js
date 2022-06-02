@@ -8,8 +8,23 @@
 
 function insertAndSort(array, obj) {
   // Tu código acá
-  
-}
+  var array = [] ; 
+  for (var indice in obj  ) {
+    array.push(obj[indice])
+  }
+  for ( var i = 0 ; i < array.length ; i++) { 
+    array.push(array[i])
+  }
+  for (var i = 1 ; i < array.length ; i++) {
+    var aux = array[i] ; 
+    var j = i -1 ; 
+    while( j >= 0 && array[j] > aux ) {
+      array[j+1] = array[j] ; 
+      j = j -1 } 
+      array[j + 1] = aux ;  
+    }
+  }
+
 
 //⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
 module.exports = insertAndSort;
